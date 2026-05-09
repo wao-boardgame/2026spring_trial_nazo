@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>WAOの4枚謎 ヒント</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .hint-box {
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .hint {
+      margin-top: 10px;
+      padding: 12px;
+      background: #fff8c6;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      display: none;
+      white-space: pre-wrap;
+    }
+
+.answer-grid {
+  display: none;              /* 最初は非表示 */
+  margin-top: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.answer-grid a img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.answer-button {
+  background: #ff9800;   /* オレンジ */
+  color: white;
+}
+
+.answer-button:hover {
+  background: #e68900;   /* 少し濃いオレンジ（ホバー時） */
+}
+
+  </style>
+</head>
+<body>
+
+  <h2>ヒント</h2>
+
+  <div class="hint-box">
+    <button onclick="toggleHint('hint1')">Aの謎</button>
+    <div id="hint1" class="hint">
+      カナで表記すると<br>エー・エフ・エイチ・？・エム・エヌ・エス・エックス
+    </div>
+  </div>
+
+  <div class="hint-box">
+    <button onclick="toggleHint('hint2')">Bの謎</button>
+    <div id="hint2" class="hint">
+     デジタル数字のようにセグメント表示したとき、左右対称になるものが並んでいます。
+  </div>
+  </div>
+
+  <div class="hint-box">
+    <button onclick="toggleHint('hint3')">Cの謎</button>
+    <div id="hint3" class="hint">
+    Ｏのローマ字読みは「オ」
+    Ｉのローマ字読みは「イ」
+ </div>
+  </div>
+
+  <div class="hint-box">
+    <button onclick="toggleHint('hint4')">Dの謎</button>
+    <div id="hint4" class="hint">
+     イラストの単語（DRESS・STAR・ROSE）を結ぶと「N」になります。
+     DICE・STAR・BEDを結ぶと？
+</div>
+  </div>
+
+  <div class="hint-box">
+    <button onclick="toggleHint('hint5')">LAST ANSWER</button>
+    <div id="hint5" class="hint">ABCDの答えはそれぞれアルファベット1文字です。つなげると4文字の英単語となります。その間に7文字の英単語が書かれています。</div>
+  </div>
+
+<div class="hint-box">
+<button class="answer-button" onclick="window.open('explanation.html', '_blank')">解答・解説を見る</button>
+<div id="answerArea" class="answer-grid">
+
+ </div>
+</div>
+
+  <script>
+  function toggleHint(id) {
+    const target = document.getElementById(id);
+
+    // 今の表示状態を確認
+    const isOpen = target.style.display === 'block';
+
+    // トグル動作：開いていれば閉じる、閉じていれば開く
+    target.style.display = isOpen ? 'none' : 'block';
+  }
+
+  function toggleAnswer() {
+    const area = document.getElementById('answerArea');
+    const isOpen = area.style.display === 'grid';
+    area.style.display = isOpen ? 'none' : 'grid';
+  }
+
+  </script>
+
+</body>
+</html>
